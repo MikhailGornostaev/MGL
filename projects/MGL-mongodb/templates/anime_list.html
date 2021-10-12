@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>MyGeekList - страница авторизации</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href={{ url_for( 'static', filename='css/styles.css' )}}>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for( 'static', filename='files/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for( 'static', filename='files/favicon-16x16.png')}}">
+</head>
+
+<body>
+    <header>
+        <h1 class="orange_header">Мои аниме</h1>
+    </header>
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{cat}}">{{msg}}</div>
+    {% endfor %}
+    <div class="container5">
+        <div class="centered_list">
+            <ol>
+                {% for u in list %}
+                <form class="ajx" action="/anime_list" method="post" id="{{u[0]}}" name="{{u[0]}}">
+                    <li><input type="submit" class="form-control" name="Anime1" id="cat" placeholder="Кит*" value="{{u[0]}}.........................................................................................................................................................................{{u[1]}}"></li>
+                </form>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+    <div class="flex_container">
+        <div class="bottom_buttons2">
+            <button type="button" class="button_left" onclick="location.href='user';">Назад</button>
+            <button type="button" class="button_right" onclick="location.href='anime_new';">Добавить</button>
+        </div>
+        <div id="Modal_confirm">
+            <p><span id="confirm_message">Хотите изменить или удалить запись?</span></p>
+            <button type="button" class="modal_button_left">Удалить</button>
+            <button type="button" class="modal_button_right" href="anime_red">Изменить</button>
+        </div>
+        <div id="Overlay"></div>
+        <div id="Modal_delete">
+            <p><span id="delete_message">Запись удалена</span></p>
+            <button type="button" class="modal_button_center" id="close">ОК</button>
+        </div>
+        <div id="Overlay"></div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src={{ url_for( 'static', filename='js/ajax_m.js' )}}></script>
+</body>
+
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>MyGeekList - Успешная регистрация</title>
+    <link rel="stylesheet" href={{ url_for( 'static', filename='css/styles.css' )}}>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for( 'static', filename='files/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for( 'static', filename='files/favicon-16x16.png')}}">
+</head>
+
+<body>
+    <header>
+        <h1 class="orange_header">404 Not Found</h1>
+    </header>
+    <div class="central_img">
+        <img src={{ url_for( 'static', filename='files/404.jpg' )}} class="responsive" alt="Not found">
+        <p>Запрашиваемая страница не найдена</p>
+        <p><a class="back" onclick="location.href='main_page';">Вернуться на главную</a></p>
+    </div>
+</body>
+
+</html>

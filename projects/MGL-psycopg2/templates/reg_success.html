@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>MyGeekList - Успешная регистрация</title>
+    <link rel="stylesheet" href={{ url_for( 'static', filename='css/styles.css' )}}>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for( 'static', filename='files/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for( 'static', filename='files/favicon-16x16.png')}}">
+</head>
+
+<body>
+    <header>
+        <h1 class="orange_header">Регистрация завершена успешно</h1>
+    </header>
+    <div class="central_text">
+        <p>
+            Зайдите в приложение под <br> своим логином и <br> паролем
+        </p>
+    </div>
+    <button type="button" class="central_ok_button" onclick="location.href='main_page';">ОК</button><br>
+</body>
+
+</html>

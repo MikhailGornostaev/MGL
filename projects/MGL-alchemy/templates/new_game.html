@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>MyGeekList - создание записи игры</title>
+    <link rel="stylesheet" href={{ url_for( 'static', filename='css/styles.css' )}}>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for( 'static', filename='files/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for( 'static', filename='files/favicon-16x16.png')}}">
+</head>
+
+<body>
+    <header>
+        <h1 class="orange_header">Создание записи игры</h1>
+    </header>
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{cat}}">{{msg}}</div>
+    {% endfor %}
+    <form action="/game_new" method="post">
+        <div class="container3">
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="title" id="titleg" aria-describedby="inputSuccess2Status" placeholder="Название игры*">
+            </div>
+            <div class="form-group has-feedback">
+                <select class="form-select form-select-sm form-control" name="rating" aria-label=".form-select-sm example" id="selg">
+                    <option selected>Выберите рейтинг</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+            </div>
+        </div>
+        <div class="flex_container">
+            <div class="bottom_buttons2">
+                <button type="button" class="button_left" onclick="location.href='game_list';">Назад</button>
+                <button type="submit" id="addg" class="button_right">Добавить</button>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src={{ url_for( 'static', filename='js/scripts_game.js' )}}></script>
+</body>
+
+</html>

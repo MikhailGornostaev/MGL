@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>MyGeekList - Главная страница</title>
+    <link rel="stylesheet" href={{ url_for( 'static', filename='css/styles.css' )}}>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for( 'static', filename='files/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for( 'static', filename='files/favicon-16x16.png')}}">
+</head>
+
+<body>
+    <header>
+        <img src={{ url_for( 'static', filename='files/GL.png' )}} class="responsive" alt="logo">
+        <h1 class="orange_header">Добро пожаловать!</h1>
+    </header>
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{cat}}">{{msg}}</div>
+    {% endfor %}
+    <div class="container_main">
+        <button type="button" class="main_button" onclick="location.href='login';">Войти</button><br>
+        <button type="button" class="main_button" onclick="location.href='registration';">Регистрация</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>MyGeekList - Выход из аккаунта</title>
+    <link rel="stylesheet" href={{ url_for( 'static', filename='css/styles.css' )}}>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for( 'static', filename='files/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for( 'static', filename='files/favicon-16x16.png')}}">
+</head>
+
+<body>
+    <header>
+        <h1 class="orange_header">Вы вышли из профиля</h1>
+    </header>
+    <div class="central_text">
+        <p>
+            Для доступа к своей странице<br>авторизуйтесь повторно
+        </p>
+    </div>
+    <button type="button" class="central_ok_button" onclick="location.href='/';">ОК</button><br>
+</body>
+
+</html>
